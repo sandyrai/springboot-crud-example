@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" xmln:th="http://www.thymeleaf.org">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>[[${pageTitle}]]</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   </head>
+   <body>
+   
+   
+   <section style="padding: 70px;">
+         <div class="container">
+         <div class="row" style="padding: 15px;">
+         <div class="col-md-1"></div>
+          <div class="col-md-3"><a  th:href="@{'/'}"><h5> <i class="fa-solid fa-house-chimney"></i></h5></a></div> 
+           <div class="col-md-5"><h4 class="center">[[${pageTitle}]]</h4></div> 
+          <div class="col-md-3"></div> 
+         
+         </div>
+  
+      
+         <div class="row" style="">
+            <div class="col-md-4"></div>
+            <div class="col-md-4" style="border: 1px dashed;border-radius: 5px;">
+               <form th:action="@{/users/save/}" method="POST" th:object="${user}" style="padding: 5px;">
+               
+               <input type="hidden" th:field="*{id}">
+               
+                  <div class="mb-3">
+                     <label for="exampleInputEmail1" class="form-label">Email address</label>
+                     <input type="email" class="form-control" id="email" aria-describedby="emailHelp"  th:field="*{email}" required minlength="10"  maxlength="45">
+                  </div>
+                  <div class="mb-3">
+                     <label for="exampleInputPassword1" class="form-label">Fist Name</label>
+                     <input type="text" class="form-control" id="firstname" th:field="*{firstname}" required minlength="2"  maxlength="45">
+                  </div>
+                  <div class="mb-3">
+                     <label for="exampleInputPassword1" class="form-label">Last Name</label>
+                     <input type="text" class="form-control" id="lastname" th:field="*{lastname}" required minlength="2"  maxlength="30" >
+                  </div>
+                  <div class="mb-3">
+                     <label for="exampleInputPassword1" class="form-label">Password</label>
+                     <input type="password" class="form-control" id="exampleInputPassword1" th:field="*{password}" required minlength="5"  maxlength="15">
+                  </div>
+                 <p style="text-align: center;"> <button type="submit" class="btn btn-primary m-2">Submit</button>
+                  <button type="button" class="btn btn-secondary m-2" onclick="cancelform()">Cancel</button></p>
+               </form>
+            </div>
+            <div class="col-md-4"></div>
+         </div>
+      </div>
+   </section>
+      
+      <script>
+      
+      function cancelform(){
+	window.location = "[[@{/users}]]";
+}
+      
+      </script>
+      
+      
+      
+   </body>
+</html>

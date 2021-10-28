@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmln:th="http://www.thymeleaf.org">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>HomePage</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+   </head>
+   <body>
+      <section style="margin-top: 70px;">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-2"></div>
+               <div class="col-md-8">
+                  <div class="jumbotron jumbotron-fluid">
+                     <div class="container">
+                        <h4 class="display-6 " style="text-align: center;">Spring MVC CRUD Example</h4>
+                        <p class="card-text">A sample crud operations in spring boot application which modify the data in database using hibernate/jpa persistence apis.<br>
+                         Demo developed by ~ sandeep kumar  </p>
+                        <ul>
+                           <li>Maven Dependencies </li>
+                           <li>Hibernate Configuration</li>
+                           <li>Datasource Configuration</li>
+                           <li>Service (uses repository)</li>
+                           <li>Thymeleaf used in frotend .</li>
+                        </ul>
+                        <p style="text-align: center; margin: 0 auto;">
+                            <a type="button" class="btn btn-info" th:href=@{/users} >Demo</a>
+                        </p>    
+                        <p style="margin-top: 25px;"><a type="button" style="width: 100%;"  class="btn btn-success" href="#" target="_blank" >Download Project</a></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-2"></div>
+            </div>
+         </div>
+      </section>
+   </body>
+</html>
